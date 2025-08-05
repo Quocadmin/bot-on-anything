@@ -531,3 +531,115 @@ Note: The server IP address must be configured in the "Enterprise Trusted IP" li
 
 + `clear_memory_commands`: Dialogue internal commands to actively clear previous memory, the string array can customize command aliases.
   + default: ["#clear_memory"]
+
+
+1. Dự án này là gì?
+Bot on Anything là một dự án mã nguồn mở giúp bạn tạo ra chatbot AI một cách nhanh chóng và dễ dàng, có thể chạy trên rất nhiều nền tảng khác nhau như: web, Telegram, Slack, WeChat, Gmail, QQ, DingTalk, Feishu, v.v.
+
+Nói đơn giản:
+Bạn chỉ cần cấu hình nhẹ nhàng, chọn AI (ví dụ ChatGPT), chọn kênh (Telegram, Web, Slack...) là xong, bot của bạn sẽ sẵn sàng chạy trên nền tảng đó.
+
+2. Dành cho ai?
+Lập trình viên muốn tự làm chatbot AI cho doanh nghiệp/cá nhân mà không tốn quá nhiều công sức code lại từ đầu.
+
+Người mới học về AI/bot muốn thực hành hoặc triển khai thử nhanh.
+
+Các team kỹ thuật muốn linh hoạt tích hợp AI bot vào đa dạng ứng dụng/công cụ mà họ đang dùng.
+
+3. Dự án này hoạt động thế nào?
+Chọn mô hình AI:
+Hiện tại hỗ trợ các mô hình như ChatGPT (OpenAI), LinkAI, và có thể mở rộng sang Claude, Gemini…
+
+Chọn kênh ứng dụng:
+Dự án có sẵn tích hợp với rất nhiều kênh phổ biến, chỉ cần cấu hình là dùng ngay.
+
+Cấu hình đơn giản:
+Chỉ cần sửa 1 file cấu hình JSON (giống như điền vào form), chọn mô hình + kênh, nhập token/api key là chạy được.
+
+Chạy lệnh đơn giản:
+Dùng python3 app.py là bot hoạt động.
+
+4. Các bước sử dụng cơ bản
+a. Cài đặt và chuẩn bị môi trường
+Hỗ trợ Linux, MacOS, Windows (chỉ cần có Python, khuyến nghị dùng Python 3.7.1 – 3.10).
+
+Clone code và cài dependencies:
+
+bash
+Sao chép
+Chỉnh sửa
+git clone https://github.com/zhayujie/bot-on-anything
+cd bot-on-anything/
+pip3 install -r requirements.txt
+b. Cấu hình bot
+Dùng file mẫu config-template.json, copy thành config.json để tùy chỉnh.
+
+Chọn mô hình AI và kênh tích hợp bằng cách thay đổi trường "type" trong từng phần của file JSON.
+
+Mỗi mô hình/kênh đều có hướng dẫn chi tiết cách điền thông tin.
+
+Ví dụ cấu hình dùng ChatGPT, kênh Slack:
+
+json
+Sao chép
+Chỉnh sửa
+{
+  "model": {
+    "type" : "chatgpt",
+    "openai": {
+      "api_key": "YOUR_API_KEY",
+      "model": "gpt-3.5-turbo"
+    }
+  },
+  "channel": {
+    "type": "slack",
+    "slack": {
+      "slack_bot_token": "xoxb-xxxx",
+      "slack_app_token": "xapp-xxxx"
+    }
+  }
+}
+c. Chạy bot
+Chạy câu lệnh:
+
+bash
+Sao chép
+Chỉnh sửa
+python3 app.py
+Tùy cấu hình, bot sẽ khởi động trên nền tảng bạn chọn (ví dụ: Slack, Web, Telegram, Gmail...)
+
+5. Ưu điểm nổi bật
+Dễ cấu hình, dễ mở rộng: Thêm kênh/mô hình mới không cần sửa code phức tạp.
+
+Đa nền tảng: Một cấu hình có thể chạy trên nhiều app khác nhau.
+
+Tùy biến cao: Có thể cá nhân hóa “tính cách” của bot bằng mô tả riêng.
+
+Mở rộng tính năng nhanh: Dự án cộng đồng, được cập nhật và bổ sung liên tục.
+
+6. Một số kịch bản ứng dụng thực tế
+Tạo Chatbot AI tư vấn trên website doanh nghiệp.
+
+Tạo trợ lý AI cho nhóm chat Slack hoặc Telegram.
+
+Tích hợp trả lời tự động bằng AI cho email Gmail.
+
+Làm bot trả lời tự động cho WeChat, QQ, DingTalk, Feishu,...
+
+Test thử nhiều mô hình AI và so sánh chúng mà không mất công code lại.
+
+7. Cần chuẩn bị gì để dùng?
+Biết cài Python và cài thư viện bằng pip.
+
+Có tài khoản để lấy API key của AI model (ví dụ: OpenAI cho ChatGPT).
+
+Có token/bot key của các nền tảng bạn muốn tích hợp (Slack, Telegram, v.v).
+
+Có thể phải biết cấu hình mạng/server nếu chạy trên nền tảng yêu cầu public IP (ví dụ Webhook).
+
+8. Tóm tắt lại
+Bot on Anything giúp bạn tạo chatbot AI cực kỳ dễ, chạy được trên rất nhiều nền tảng.
+
+Cài đặt đơn giản, cấu hình dễ hiểu, mở rộng đa dạng.
+
+Phù hợp cả với người mới, muốn thử nghiệm AI bot trên nhiều nền tảng khác nhau mà không phải code lại từ đầu.
